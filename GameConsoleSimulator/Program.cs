@@ -1,4 +1,6 @@
-using GameConsoleSimulator.View;
+using System;
+using System.Threading;
+using GameConsoleSimulator.Models;
 
 namespace GameConsoleSimulator
 {
@@ -7,12 +9,9 @@ namespace GameConsoleSimulator
     {
         public static void Main()
         {
-            var window = new Window("Main Window");
-
-            while (true)
-            {
-            
-            }
+            var ps4 = new PlayStation4();
+            ps4.ShowWelcomeScreen();
+            Thread.Sleep(TimeSpan.FromSeconds(20));
         }
     } 
     

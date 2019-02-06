@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Fonts\RobotoMono-Regular.ttf" />
+    <Content Include="Assets\Sounds\PlayStation Startup Tone.flac" />
     <Content Include="Config\sfmlnet-audio-2.dll.config" />
     <Content Include="Config\sfmlnet-graphics-2.dll.config" />
     <Content Include="Config\sfmlnet-system-2.dll.config" />
@@ -115,6 +116,7 @@
     <Content Include="Libraries\csfml-network-2.dll" />
     <Content Include="Libraries\csfml-system-2.dll" />
     <Content Include="Libraries\csfml-window-2.dll" />
+    <Content Include="Libraries\openal32.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="BeforeBuild">
@@ -127,6 +129,7 @@
     <Copy SourceFiles="Libraries\csfml-network-2.dll" DestinationFolder="$(OutDir)" />
     <Copy SourceFiles="Libraries\csfml-system-2.dll" DestinationFolder="$(OutDir)" />
     <Copy SourceFiles="Libraries\csfml-window-2.dll" DestinationFolder="$(OutDir)" />
+    <Copy SourceFiles="Libraries\openal32.dll" DestinationFolder="$(OutDir)" />
     <!--add other dynamic libraries here if needed-->
   </Target>
   <Target Name="CopyCustomDynamicLibraryConfigs" Condition=" '$(OS)' == 'Unix' " AfterTargets="AfterBuild">
@@ -143,7 +146,11 @@
     <ItemGroup>
       <Fonts Include="Assets\Fonts\*.*" />
     </ItemGroup>
+    <ItemGroup>
+      <Sounds Include="Assets\Sounds\*.*" />
+    </ItemGroup>
     <Copy SourceFiles="@(Bitmaps)" DestinationFolder="$(OutDir)\Assets\Bitmaps\" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="@(Fonts)" DestinationFolder="$(OutDir)\Assets\Fonts\" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(Sounds)" DestinationFolder="$(OutDir)\Assets\Sounds\" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
   </Target>
 </Project>

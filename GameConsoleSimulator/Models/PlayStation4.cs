@@ -1,5 +1,6 @@
 using System;
 using GameConsoleSimulator.Util;
+using SFML.Audio;
 
 namespace GameConsoleSimulator.Models
 {
@@ -21,8 +22,17 @@ namespace GameConsoleSimulator.Models
         
         public override void ShowWelcomeScreen()
         {
-            //don't worry about this yet
-            throw new System.NotImplementedException();
+            playStartupSound();
+        }
+
+        private void playStartupSound()
+        {
+            string applicationDirectory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            String startupToneSoundFile = applicationDirectory + @"\Assets\Sounds\PlayStation Startup Tone.flac";
+            var startupToneSoundBuffer = new SoundBuffer(filename: startupToneSoundFile);
+            SFML.Audio.Sound startupTone = new Sound(startupToneSoundBuffer);
+            
+            startupTone.Play();
         }
     }
 }
