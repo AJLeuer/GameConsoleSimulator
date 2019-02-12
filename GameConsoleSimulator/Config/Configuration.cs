@@ -1,5 +1,4 @@
 ﻿using SFML.Window;
-using GameConsoleSimulator.Utility;
 using GameConsoleSimulator.Util;
 using GameConsoleSimulator.View;
 

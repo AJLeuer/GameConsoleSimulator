@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using GameConsoleSimulator.Util;
 using SFML.Audio;
 
@@ -28,7 +29,8 @@ namespace GameConsoleSimulator.Models
         private void playStartupSound()
         {
             string applicationDirectory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            String startupToneSoundFile = applicationDirectory + @"\Assets\Sounds\PlayStation Startup Tone.flac";
+            char slash = Path.DirectorySeparatorChar;
+            String startupToneSoundFile = applicationDirectory + $"{slash}Assets{slash}Sounds{slash}PlayStation Startup Tone.flac";
             var startupToneSoundBuffer = new SoundBuffer(filename: startupToneSoundFile);
             SFML.Audio.Sound startupTone = new Sound(startupToneSoundBuffer);
             

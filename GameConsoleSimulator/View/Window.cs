@@ -4,6 +4,7 @@ using SFML.Window;
 using GameConsoleSimulator.Utility;
 using GameConsoleSimulator.Config;
 using GameConsoleSimulator.Util;
+using static GameConsoleSimulator.View.DisplayData;
 
 namespace GameConsoleSimulator.View
 {
@@ -17,7 +18,7 @@ namespace GameConsoleSimulator.View
 		{
 			Vec2<uint> baseWindowSize = Configuration.MainWindowSize;
 			
-			float dpiScale = DisplayData.getDisplayScalingFactor();
+			float dpiScale = getDisplayScalingFactor();
 			
 			Vec2 <uint> scaledWindowSize = new Vec2<uint>((uint)(baseWindowSize.X * dpiScale),
 				(uint)(baseWindowSize.Y * dpiScale));
