@@ -10,8 +10,14 @@ namespace GameConsoleSimulator
         public static void Main()
         {
             var ps4 = new PlayStation4();
-            ps4.ShowWelcomeScreen();
-            Thread.Sleep(TimeSpan.FromSeconds(20));
+            ps4.StartUp();
+
+            while (true)
+            {
+                
+                Thread.Sleep(TimeSpan.FromMilliseconds(8));
+            }
+            
         }
     } 
     

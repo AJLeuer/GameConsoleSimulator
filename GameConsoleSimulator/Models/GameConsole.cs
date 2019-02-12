@@ -74,7 +74,7 @@ namespace GameConsoleSimulator.Models
         /// <summary>
         /// Shows a welcome splash screen
         /// </summary>
-        public abstract void ShowWelcomeScreen();
+        public abstract void StartUp();
     }
 
     public enum AVInterface

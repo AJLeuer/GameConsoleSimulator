@@ -11,7 +11,7 @@ namespace GameConsoleSimulator.Models
             }
         }
 
-        public override void ShowWelcomeScreen()
+        public override void StartUp()
         {
             throw new System.NotImplementedException();
         }
